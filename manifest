@@ -1,7 +1,0 @@
-CHANGES
-Makefile.PL
-MANIFEST
-README
-t/basic.t
-User.pm
-User.xs

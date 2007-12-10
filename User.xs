@@ -539,7 +539,7 @@ generic_getuai_call(ITMLST *ListOItems, int InfoCount, SV *UserName)
         } else {
           hv_store(AllPurposeHV, OurDataList[i].ItemName,
                    strlen(OurDataList[i].ItemName),
-                   &sv_undef, 0);
+                   &PL_sv_undef, 0);
         }
         break;
       case IS_COUNTSTRING:
@@ -554,7 +554,7 @@ generic_getuai_call(ITMLST *ListOItems, int InfoCount, SV *UserName)
         } else {
           hv_store(AllPurposeHV, OurDataList[i].ItemName,
                    strlen(OurDataList[i].ItemName),
-                   &sv_undef, 0);
+                   &PL_sv_undef, 0);
         }
         break;
       case IS_VMSDATE:
@@ -627,7 +627,7 @@ generic_getuai_call(ITMLST *ListOItems, int InfoCount, SV *UserName)
     if (SS$_ACCVIO == status)
       printf("ACCVIO\n");
     SETERRNO(EVMSERR, status);
-    ReturnedSV = &sv_undef;
+    ReturnedSV = &PL_sv_undef;
   }
 
   

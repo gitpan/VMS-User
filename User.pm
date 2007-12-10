@@ -1,6 +1,7 @@
 package VMS::User;
 
 use strict;
+use warnings;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 require Exporter;
@@ -13,7 +14,7 @@ require AutoLoader;
 # Do not simply export all your public functions/methods/constants.
 @EXPORT = qw();
 @EXPORT_OK = qw(&user_list);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 bootstrap VMS::User $VERSION;
 
@@ -34,16 +35,12 @@ sub user_list {
     return @names;
 }
         
-
-
-# Autoload methods go after =cut, and are processed by the autosplit program.
-
 1;
 __END__
 
 =head1 NAME
 
-VMS::User - Add, remove, list, and change VMS users
+VMS::User - list VMS user information
 
 =head1 SYNOPSIS
 
@@ -56,12 +53,13 @@ VMS::User - Add, remove, list, and change VMS users
 
 =head1 DESCRIPTION
 
-The VMS::User module provides access to the SYSUAF. Read-only at the
-moment, but that'll change with later versions of this module.
+The VMS::User module provides access to the SYSUAF.  Read-only at the
+moment, but that may change with later versions of this module.
 
 =head1 AUTHOR
 
 Dan Sugalski E<lt>sugalskd@ous.eduE<gt>
+Version 0.02 released by by Peter Prymmer in 2007 
 
 =head1 BUGS
 
@@ -72,6 +70,13 @@ None known, but it is beta code...
 The C<user_list()> function spawns a subprocess that invokes C<AUTHORIZE> and
 parses the output of C<SHOW/BRIEF *>. This means that you need read access to
 SYSUAF and execute privs on AUTHORIZE to use it.
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 1999 by Dan Sugalski
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
